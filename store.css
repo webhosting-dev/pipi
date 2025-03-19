@@ -474,3 +474,7 @@ li.active > .u-button-style.u-active-none {
     padding-right: 20px;
   }
 }
+
+.u-content-1.u-text:not(h1):not(h2):not(h3):not(h4):not(.u-align-center) {
+  text-align: justify;
+}
