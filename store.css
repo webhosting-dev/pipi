@@ -263,6 +263,15 @@ li.active > .u-button-style.u-active-none {
   margin: 20px auto 0;
 }
 
+/* Title styling - targeting the Literacy heading */
+.u-section-1 .u-text-1,
+.u-text.u-text-1.u-text-custom-color-4 {
+  font-size: 3rem !important;
+  font-weight: 600 !important;
+  font-family: 'Poppins', 'Raleway', sans-serif !important;
+  margin: 30px auto 20px !important;
+}
+
 /* Price styling - targeting the $50 text */
 .u-section-1 .u-text-4,
 .u-align-center.u-text.u-text-default.u-text-4 {
