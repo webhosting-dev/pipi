@@ -409,18 +409,18 @@ li.active > .u-button-style.u-active-none {
   left: 0;
   width: 100px;
   height: 100px;
-  background-color: rgba(134, 181, 173, 0.5);
+  background-color: rgba(134, 181, 173, 0.80);
   clip-path: polygon(0 0, 0 100%, 100% 0);
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
-  padding: 10px 0 0 10px;
+  padding: 20px 0 0 20px;
   font-family: 'Poppins', 'Raleway', sans-serif;
   font-weight: 600;
-  font-size: 1.3rem;
+  font-size: 1.8rem;
   color: white;
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: opacity 1.0s ease;
   z-index: 10;
 }
 
@@ -431,20 +431,30 @@ li.active > .u-button-style.u-active-none {
   left: 0;
   width: 100%;
   padding: 10px 0;
-  background-color: rgba(232, 152, 141, 0.75);
+  background-color: rgba(232, 152, 141, 0.80);
   color: white;
   font-family: 'Poppins', 'Raleway', sans-serif;
   font-weight: 500;
-  font-size: 1.2rem;
+  font-size: 1.8rem;
   text-align: center;
   text-transform: uppercase;
-  border-radius: 0 0 5px 5px;
+  border-radius: 0 0 0 0;
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: opacity 1.0s ease;
   z-index: 10;
 }
 
 .image-wrapper:hover::before,
 .image-wrapper:hover::after {
   opacity: 1;
+}
+
+/* Make the image wrapper a relative positioning context */
+.image-wrapper {
+  cursor: pointer;
+}
+
+/* Style the hover effect and make it look clickable */
+.image-wrapper::after {
+  cursor: pointer;
 }
