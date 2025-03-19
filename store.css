@@ -235,10 +235,64 @@ li.active > .u-button-style.u-active-none {
   min-height: 915px;
 }
 
+/* Create a position relative wrapper for the image to allow absolute positioning of stickers */
 .u-section-1 .u-image-1 {
   width: 400px;
   height: 400px;
   margin: -2px auto 0;
+  position: relative;
+  overflow: visible !important; /* Allow stickers to overflow */
+}
+
+/* Triangle price sticker in top left corner */
+.u-section-1 .u-image-1::before {
+  content: "$50";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100px;
+  height: 100px;
+  background-color: rgba(134, 181, 173, 0.5); /* #86B5AD with 50% transparency */
+  clip-path: polygon(0 0, 0 100%, 100% 0); /* Create triangle shape */
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 10px 0 0 10px;
+  font-family: 'Poppins', 'Raleway', sans-serif;
+  font-weight: 600;
+  font-size: 1.3rem;
+  color: white;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 10;
+}
+
+/* Bottom button sticker */
+.u-section-1 .u-image-1::after {
+  content: "Buy Now";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  padding: 10px 0;
+  background-color: rgba(232, 152, 141, 0.75); /* #E8988D with 75% transparency */
+  color: white;
+  font-family: 'Poppins', 'Raleway', sans-serif;
+  font-weight: 500;
+  font-size: 1.2rem;
+  text-align: center;
+  text-transform: uppercase;
+  border-radius: 0 0 5px 5px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 10;
+}
+
+/* Show stickers on hover */
+.u-section-1 .u-image-1:hover::before,
+.u-section-1 .u-image-1:hover::after {
+  opacity: 1;
 }
 
 .u-section-1 .u-text-1 {
