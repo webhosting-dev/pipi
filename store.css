@@ -173,7 +173,7 @@ a.u-button-style.u-text-custom-color-3[class*="u-border-"] {
 .u-text-custom-color-4, 
 a.u-button-style.u-text-custom-color-4, 
 a.u-button-style.u-text-custom-color-4[class*="u-border-"] {
-  color: #354b9c !important;
+  color: #86B5AD !important;
 }
 
 /* Body font styling */
@@ -266,8 +266,8 @@ li.active > .u-button-style.u-active-none {
 /* Title styling - targeting the Literacy heading */
 .u-section-1 .u-text-1,
 .u-text.u-text-1.u-text-custom-color-4 {
-  font-size: 3rem !important;
-  font-weight: 600 !important;
+  font-size: 2.7rem !important;
+  font-weight: 550 !important;
   font-family: 'Poppins', 'Raleway', sans-serif !important;
   margin: 30px auto 20px !important;
 }
