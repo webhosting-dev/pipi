@@ -386,3 +386,65 @@ li.active > .u-button-style.u-active-none {
     height: 340px;
   }
 }
+
+.image-wrapper {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  margin: -2px auto 0;
+  display: block;
+}
+
+.image-wrapper .u-image-1 {
+  width: 100%;
+  height: 100%;
+  border-radius: 0.40rem;
+  display: block;
+}
+
+.image-wrapper::before {
+  content: "$50";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100px;
+  height: 100px;
+  background-color: rgba(134, 181, 173, 0.5);
+  clip-path: polygon(0 0, 0 100%, 100% 0);
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 10px 0 0 10px;
+  font-family: 'Poppins', 'Raleway', sans-serif;
+  font-weight: 600;
+  font-size: 1.3rem;
+  color: white;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 10;
+}
+
+.image-wrapper::after {
+  content: "Buy Now";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px 0;
+  background-color: rgba(232, 152, 141, 0.75);
+  color: white;
+  font-family: 'Poppins', 'Raleway', sans-serif;
+  font-weight: 500;
+  font-size: 1.2rem;
+  text-align: center;
+  text-transform: uppercase;
+  border-radius: 0 0 5px 5px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 10;
+}
+
+.image-wrapper:hover::before,
+.image-wrapper:hover::after {
+  opacity: 1;
+}
