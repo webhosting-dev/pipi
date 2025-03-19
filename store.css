@@ -483,3 +483,18 @@ h4.u-content-1.u-text {
 .u-content-1.u-text li {
   text-align: justify !important;
 }
+
+/* Add space between headings and paragraphs */
+h4.u-content-1.u-text-2 {
+  margin-bottom: 15px !important;
+}
+
+/* Add space after each section */
+h4.u-content-1.u-text {
+  margin-bottom: 10px !important;
+}
+
+/* Add space before new section headings */
+h4.u-content-1.u-text-2 {
+  margin-top: 25px !important;
+}
