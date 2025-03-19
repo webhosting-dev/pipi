@@ -16,11 +16,11 @@ img.u-image {
 }
 
 .u-image-circle.u-image {
-  border-radius: 5% !important;
+  border-radius: 0.40rem;
 }
 
 .u-image-round {
-  border-radius: 5%;
+  border-radius: 0.40rem;
 }
 
 .u-text .u-image {
@@ -78,7 +78,7 @@ img.u-image {
   vertical-align: middle;
   text-align: center;
   padding: 10px 50px;
-  border-radius: 0;
+  0;
   align-self: flex-start;
 }
 
@@ -92,7 +92,7 @@ img.u-image {
 }
 
 .u-btn-round {
-  border-radius: 5%;
+  5px;
 }
 
 /* Override existing border radius styles with our new value */
@@ -101,7 +101,7 @@ img.u-image {
 .u-radius-50 .u-background-effect, 
 .u-radius-50 > .u-container-layout,
 .u-btn-round {
-  border-radius: 5% !important;
+  5px !important;
 }
 
 /* Custom colors */
@@ -123,13 +123,13 @@ img.u-image {
 /* Override border radius for all buttons with these classes */
 .u-btn-round,
 .u-radius-50 {
-  border-radius: 5% !important;
+  5px !important;
 }
 
 /* More specific selector to override any existing styles */
 .u-btn.u-button-style.u-custom-color-1.u-btn-3 {
   background-color: #E8988D !important;
-  border-radius: 5% !important;
+  5px !important;
 }
 
 .u-btn.u-button-style.u-custom-color-1.u-btn-3:hover,
@@ -203,7 +203,7 @@ li.active > .u-button-style.u-active-none {
 
 /* Section specific styling */
 .u-section-1 .u-sheet-1 {
-  min-height: 915%;
+  min-height: 915px;
 }
 
 .u-section-1 .u-image-1 {
@@ -249,7 +249,7 @@ li.active > .u-button-style.u-active-none {
   background-image: none;
   margin: 20px auto 60px;
   padding: 7px 70px;
-  border-radius: 5% !important;
+  5px !important;
 }
 
 .u-section-1 .u-btn-3:hover {
@@ -274,7 +274,7 @@ li.active > .u-button-style.u-active-none {
 }
 
 /* Media queries for responsiveness */
-@media (max-width: 575%) {
+@media (max-width: 575px) {
   .u-section-1 .u-sheet-1 {
     min-height: 750px;
   }
