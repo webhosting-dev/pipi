@@ -475,6 +475,11 @@ li.active > .u-button-style.u-active-none {
   }
 }
 
-.u-content-1.u-text:not(h1):not(h2):not(h3):not(h4):not(.u-align-center) {
-  text-align: justify;
+h4.u-content-1.u-text {
+  text-align: justify !important;
+}
+
+.u-content-1.u-text p, 
+.u-content-1.u-text li {
+  text-align: justify !important;
 }
