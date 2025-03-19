@@ -405,16 +405,15 @@ li.active > .u-button-style.u-active-none {
 .image-wrapper::before {
   content: "price";
   position: absolute;
-  top: 0;
+  top: 55px;
   left: 0;
   width: 100px;
-  height: 100px;
-  background-color: rgba(134, 181, 173, 0.80);
-  clip-path: polygon(0 0, 0 100%, 100% 0);
+  height: 60px;
+  background-color: rgba(134, 181, 173, 0.5);
+  border-radius: 0 3rem 3rem  0;  /* Rounded on right side */
   display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-  padding: 15px 15px 15px 15px;
+  justify-content: center;  /* Center text horizontally */
+  align-items: center;      /* Center text vertically */
   font-family: 'Poppins', 'Raleway', sans-serif;
   font-weight: 600;
   font-size: 1.8rem;
