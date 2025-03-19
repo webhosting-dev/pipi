@@ -78,7 +78,7 @@ img.u-image {
   vertical-align: middle;
   text-align: center;
   padding: 10px 50px;
-  0;
+  border-radius: 0;
   align-self: flex-start;
 }
 
@@ -92,7 +92,7 @@ img.u-image {
 }
 
 .u-btn-round {
-  5px;
+  border-radius: 5px;
 }
 
 /* Override existing border radius styles with our new value */
@@ -101,7 +101,7 @@ img.u-image {
 .u-radius-50 .u-background-effect, 
 .u-radius-50 > .u-container-layout,
 .u-btn-round {
-  5px !important;
+  border-radius: 5px !important;
 }
 
 /* Custom colors */
@@ -123,13 +123,13 @@ img.u-image {
 /* Override border radius for all buttons with these classes */
 .u-btn-round,
 .u-radius-50 {
-  5px !important;
+  border-radius: 5px !important;
 }
 
 /* More specific selector to override any existing styles */
 .u-btn.u-button-style.u-custom-color-1.u-btn-3 {
   background-color: #E8988D !important;
-  5px !important;
+  border-radius: 5px !important;
 }
 
 .u-btn.u-button-style.u-custom-color-1.u-btn-3:hover,
@@ -249,7 +249,7 @@ li.active > .u-button-style.u-active-none {
   background-image: none;
   margin: 20px auto 60px;
   padding: 7px 70px;
-  5px !important;
+  border-radius: 5px !important;
 }
 
 .u-section-1 .u-btn-3:hover {
