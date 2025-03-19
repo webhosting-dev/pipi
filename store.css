@@ -95,35 +95,50 @@ img.u-image {
   border-radius: 4px;
 }
 
+/* Override existing border radius styles with our new value */
 .u-radius-50, 
 .u-radius-50:before, 
 .u-radius-50 .u-background-effect, 
-.u-radius-50 > .u-container-layout {
-  border-radius: 50px !important;
+.u-radius-50 > .u-container-layout,
+.u-btn-round {
+  border-radius: 5px !important;
 }
 
 /* Custom colors */
-.u-custom-color-1, 
-.u-body.u-custom-color-1, 
-.u-container-style.u-custom-color-1:before {
-  color: #ffffff;
-  background-color: #E8988D;
-}
-
-.u-button-style.u-custom-color-1, 
-.u-button-style.u-custom-color-1[class*="u-border-"] {
-  color: #ffffff !important;
+/* Custom button colors */
+.u-custom-color-1,
+.u-button-style.u-custom-color-1,
+.u-btn.u-custom-color-1 {
   background-color: #E8988D !important;
+  color: #ffffff !important;
 }
 
-.u-button-style.u-custom-color-1:hover, 
-.u-button-style.u-custom-color-1[class*="u-border-"]:hover {
+.u-hover-custom-color-2:hover,
+.u-button-style.u-hover-custom-color-2:hover,
+.u-btn.u-hover-custom-color-2:hover {
+  background-color: #86B5AD !important;
   color: #ffffff !important;
+}
+
+/* Override border radius for all buttons with these classes */
+.u-btn-round,
+.u-radius-50 {
+  border-radius: 5px !important;
+}
+
+/* More specific selector to override any existing styles */
+.u-btn.u-button-style.u-custom-color-1.u-btn-3 {
+  background-color: #E8988D !important;
+  border-radius: 5px !important;
+}
+
+.u-btn.u-button-style.u-custom-color-1.u-btn-3:hover,
+.u-btn.u-button-style.u-hover-custom-color-2.u-btn-3:hover {
   background-color: #86B5AD !important;
 }
 
+/* Remove any hover styles that might interfere */
 .u-hover-custom-color-2:hover {
-  color: #ffffff !important;
   background-color: #86B5AD !important;
 }
 
@@ -223,22 +238,22 @@ li.active > .u-button-style.u-active-none {
   margin: 20px auto 0;
 }
 
-/* Buy now button */
+/* Buy now button - Direct targeting */
 .u-section-1 .u-btn-3 {
   border-style: none;
   font-weight: 500;
   text-transform: uppercase;
   font-size: 1.6rem;
   letter-spacing: 1px;
-  background-color: #E8988D;
+  background-color: #E8988D !important; /* Using !important to override other styles */
   background-image: none;
   margin: 20px auto 60px;
   padding: 7px 70px;
-  border-radius: 5px;
+  border-radius: 5px !important;
 }
 
 .u-section-1 .u-btn-3:hover {
-  background-color: #86B5AD;
+  background-color: #86B5AD !important;
   transition: background-color 0.3s ease;
 }
 
