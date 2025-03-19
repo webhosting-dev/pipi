@@ -498,3 +498,26 @@ h4.u-content-1.u-text {
 h4.u-content-1.u-text-2 {
   margin-top: 25px !important;
 }
+
+/* Adjust spacing between headings and lists */
+h4.u-content-1.u-text-2 + h4.u-content-1.u-text ul {
+  margin-top: 5px !important;
+}
+
+/* Adjust the list itself */
+.u-content-1.u-text ul {
+  margin-top: 5px !important;
+  margin-bottom: 10px !important;
+  padding-top: 0 !important;
+}
+
+/* Adjust list items spacing */
+.u-content-1.u-text li {
+  margin-bottom: 5px !important;
+}
+
+/* Fix the spacing for the container div inside lists */
+.u-content-1.u-text ul div {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
