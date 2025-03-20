@@ -398,8 +398,10 @@ li.active > .u-button-style.u-active-none {
 .image-wrapper .u-image-1 {
   width: 100%;
   height: 100%;
-  border-radius: 0.40rem;
+  border-radius: 0.40rem !important;
   display: block;
+  border: none;
+  overflow: hidden; /* Ensure the image doesn't overflow the border radius */
 }
 
 .image-wrapper::before {
@@ -550,5 +552,6 @@ h4.u-content-1.u-text-2 + h4.u-content-1.u-text ul {
   height: 400px;
   margin: -2px auto 0;
   display: block;
-  border-radius: 0.40rem;
+  border-radius: 0.40rem !important;
+  overflow: hidden; /* This is important for the border radius to work */
 }
