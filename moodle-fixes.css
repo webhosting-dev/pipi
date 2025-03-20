@@ -1,0 +1,34 @@
+/* Reset Font Awesome icon fonts for Moodle */
+.fa::before, 
+.fas::before, 
+.far::before, 
+.fab::before,
+.icon.fa::before, 
+.icon.fas::before, 
+.icon.far::before, 
+.icon.fab::before {
+  font-family: "FontAwesome" !important;
+}
+
+/* Remove Poppins/Raleway from ALL icons */
+.icon, 
+.icon *,
+i.fa, 
+i.fas, 
+i.far, 
+i.fab,
+span.fa, 
+span.fas, 
+span.far, 
+span.fab {
+  font-family: "FontAwesome" !important;
+}
+
+/* Restrict your custom font only to specific content elements */
+#page-content .u-section-1 h2:not(.icon):not(.fa),
+#page-content .u-section-1 h4:not(.icon):not(.fa),
+#page-content .u-section-1 p:not(.icon):not(.fa),
+#page-content .u-section-1 li:not(.icon):not(.fa),
+#page-content .u-section-1 .u-text:not(.icon):not(.fa) {
+  font-family: 'Poppins', 'Raleway', sans-serif !important;
+}
