@@ -555,3 +555,30 @@ h4.u-content-1.u-text-2 + h4.u-content-1.u-text ul {
   border-radius: 0.40rem !important;
   overflow: hidden; /* This is important for the border radius to work */
 }
+
+/* Fix for Font Awesome icons - add this to your external CSS file */
+
+/* Remove any font-family overrides that might affect icons */
+.icon.fa, 
+.icon.fas, 
+.icon.far, 
+.icon.fab,
+[class*="fa-"] {
+  font-family: initial !important; /* Reset to browser default */
+}
+
+/* Make sure our font styling only applies to content elements */
+h2:not(.icon), h4:not(.icon), p:not(.icon), a:not(.icon), 
+span:not(.icon), li:not(.icon), .u-btn:not(.icon), .u-text:not(.icon) {
+  font-family: 'Poppins', 'Raleway', sans-serif !important;
+}
+
+/* Additional fix to limit our font styling scope */
+.u-section-1 h2,
+.u-section-1 h4,
+.u-section-1 p,
+.u-section-1 span:not(.icon),
+.u-section-1 li,
+.u-section-1 .u-text {
+  font-family: 'Poppins', 'Raleway', sans-serif !important;
+}
