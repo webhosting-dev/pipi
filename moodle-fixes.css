@@ -1,35 +1,49 @@
-/* Override broad font declarations with more specific ones */
-span.icon.fa:before,
-span.icon.fas:before,
-span.icon.far:before,
-span.icon.fab:before,
-i.fa:before,
-i.fas:before,
-i.far:before,
-i.fab:before {
-  font-family: "FontAwesome", "Font Awesome 5 Free", "Font Awesome 5 Brands" !important;
+/* Force Font Awesome font load for Local Pages */
+@font-face {
+  font-family: "FontAwesomeFix";
+  src: url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/webfonts/fa-solid-900.woff2") format("woff2");
+  font-weight: 900;
+  font-style: normal;
 }
 
-/* Target specific icons by their Unicode values */
-.fa.fa-home:before { content: "\f015" !important; }
-.fa.fa-dashboard:before, .fa.fa-gauge:before { content: "\f0e4" !important; }
-.fa-th:before { content: "\f00a" !important; }
-.fa.fa-calendar:before { content: "\f133" !important; }
-.fa.fa-chevron-right:before { content: "\f054" !important; }
-.fa.fa-chevron-left:before { content: "\f053" !important; }
-.fa.fa-chevron-down:before { content: "\f078" !important; }
-.fa.fa-bell:before { content: "\f0f3" !important; }
-.fa.fa-message:before { content: "\f27a" !important; }
-.fa.fa-gear:before, .fa.fa-cog:before { content: "\f013" !important; }
-.fa.fa-user:before { content: "\f007" !important; }
-.fa.fa-sign-out:before { content: "\f08b" !important; }
-.fa.fa-magnifying-glass:before, .fa.fa-search:before { content: "\f002" !important; }
-.fa.fa-xmark:before { content: "\f00d" !important; }
-.fa.fa-ellipsis-vertical:before { content: "\f142" !important; }
-
-/* Make icons visible */
-.icon.fa, .icon.fas, .icon.far, .icon.fab {
+/* Apply the fix only within Local Pages */
+.local-staticpage .icon.fa:before,
+.local-staticpage .icon.fas:before,
+.local-staticpage .icon.far:before,
+.local-staticpage .icon.fab:before {
+  font-family: "FontAwesomeFix", "Font Awesome 5 Free", "FontAwesome" !important;
   visibility: visible !important;
+  display: inline !important;
+}
+
+/* Specific icon codes */
+.local-staticpage .fa-home:before { content: "\f015" !important; }
+.local-staticpage .fa-dashboard:before, 
+.local-staticpage .fa-gauge:before { content: "\f0e4" !important; }
+.local-staticpage .fa-th:before { content: "\f00a" !important; }
+.local-staticpage .fa-calendar:before { content: "\f133" !important; }
+
+/* Restore icon visibility */
+.local-staticpage .icon,
+.local-staticpage .icon.fa,
+.local-staticpage .icon.fas,
+.local-staticpage .navicon {
   display: inline-block !important;
+  visibility: visible !important;
+  width: auto !important;
+  height: auto !important;
   opacity: 1 !important;
+}
+
+/* Reset spans used for icons */
+.local-staticpage span.icon {
+  font-family: "FontAwesomeFix", "Font Awesome 5 Free", "FontAwesome" !important;
+  font-weight: 900 !important;
+}
+
+/* Prevent our content styles from affecting icons */
+.local-staticpage #page-content .u-section-1 span.icon,
+.local-staticpage #page-content .u-section-1 i.fa,
+.local-staticpage #page-content .u-section-1 i.fas {
+  font-family: "FontAwesomeFix", "Font Awesome 5 Free", "FontAwesome" !important;
 }
