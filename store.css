@@ -582,3 +582,55 @@ span:not(.icon), li:not(.icon), .u-btn:not(.icon), .u-text:not(.icon) {
 .u-section-1 .u-text {
   font-family: 'Poppins', 'Raleway', sans-serif !important;
 }
+
+
+/* Add this at the end of your CSS file to override previous font definitions */
+
+/* Reset icon fonts */
+i.fa:before,
+i.fas:before, 
+i.far:before, 
+i.fab:before,
+span.fa:before,
+span.fas:before,
+span.far:before,
+span.fab:before,
+.icon.fa:before,
+.icon.fas:before,
+.icon.far:before,
+.icon.fab:before {
+  font-family: "Font Awesome 5 Free", "Font Awesome 5 Brands", FontAwesome !important;
+  content: attr(data-fa-content) !important;
+}
+
+/* Specific fixes for common navigation icons */
+.fa.fa-home:before { content: "\f015" !important; }
+.fa.fa-dashboard:before { content: "\f0e4" !important; }
+.fa-th:before { content: "\f00a" !important; }
+.fa.fa-calendar:before { content: "\f133" !important; }
+.fa.fa-chevron-right:before { content: "\f054" !important; }
+.fa.fa-chevron-left:before { content: "\f053" !important; }
+.fa.fa-chevron-down:before { content: "\f078" !important; }
+.fa.fa-bell:before { content: "\f0f3" !important; }
+.fa.fa-message:before { content: "\f27a" !important; }
+.fa.fa-gear:before, .fa.fa-cog:before { content: "\f013" !important; }
+.fa.fa-user:before { content: "\f007" !important; }
+.fa.fa-sign-out:before { content: "\f08b" !important; }
+.fa.fa-magnifying-glass:before, .fa.fa-search:before { content: "\f002" !important; }
+.fa.fa-xmark:before { content: "\f00d" !important; }
+.fa.fa-ellipsis-vertical:before { content: "\f142" !important; }
+
+/* Make sure we're not applying our custom font to icon elements */
+.icon,
+.icon span,
+.icon i,
+i.fa,
+i.fas,
+i.far,
+i.fab,
+span.fa,
+span.fas,
+span.far,
+span.fab {
+  font-family: "Font Awesome 5 Free", "Font Awesome 5 Brands", FontAwesome !important;
+}
