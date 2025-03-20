@@ -1,0 +1,109 @@
+/* Font imports for Poppins and Raleway */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Raleway:wght@300;400;500;600;700&display=swap');
+
+/* Course promo image styling */
+.course-promo-image {
+  position: relative;
+  display: block;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  border-radius: 5%;
+  overflow: visible !important; /* Allow stickers to overflow */
+  transition: transform 0.5s ease-in-out;
+}
+
+.course-promo-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 5%;
+  overflow: hidden;
+  display: block;
+}
+
+/* Price sticker in top left corner */
+.course-promo-image::before {
+  content: attr(data-price);
+  position: absolute;
+  top: 30px;
+  left: 0;
+  width: 100px;
+  height: 60px;
+  background-color: rgba(134, 181, 173, 0.5);
+  border-radius: 0 3rem 3rem 0; /* Rounded on right side */
+  display: flex;
+  justify-content: center; /* Center text horizontally */
+  align-items: center; /* Center text vertically */
+  font-family: 'Poppins', 'Raleway', sans-serif;
+  font-weight: 600;
+  font-size: 1.4rem;
+  color: white;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  z-index: 10;
+}
+
+/* Info button sticker at bottom */
+.course-promo-image::after {
+  content: "INFO";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px 0;
+  background-color: rgba(232, 152, 141, 0.80);
+  color: white;
+  font-family: 'Poppins', 'Raleway', sans-serif;
+  font-weight: 500;
+  font-size: 1.4rem;
+  text-align: center;
+  text-transform: uppercase;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  z-index: 10;
+  border-radius: 0 0 5% 5%;
+}
+
+/* Show stickers on hover */
+.course-promo-image:hover::before,
+.course-promo-image:hover::after {
+  opacity: 1;
+}
+
+/* Optional hover scale effect */
+.course-promo-image:hover {
+  transform: scale(1.05);
+}
+
+/* Course title styling */
+.course-title {
+  text-align: center;
+  margin-top: 15px;
+  font-family: 'Poppins', 'Raleway', sans-serif;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Overall container styling */
+.course-promo-container {
+  padding: 10px;
+  margin: 15px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+/* Responsive adjustments */
+@media (max-width: 575px) {
+  .course-promo-image {
+    max-width: 300px;
+  }
+  
+  .course-promo-image::before {
+    font-size: 1.2rem;
+    width: 80px;
+  }
+  
+  .course-promo-image::after {
+    font-size: 1.2rem;
+  }
+}
