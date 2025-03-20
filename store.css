@@ -188,7 +188,14 @@ h2, h4 {
 }
 
 /* Apply Poppins/Raleway to all text elements */
-h2, h4, p, a, span, li, .u-btn, .u-text {
+.u-section-1 h2, 
+.u-section-1 h4, 
+.u-section-1 p, 
+.u-section-1 a, 
+.u-section-1 li, 
+.u-section-1 .u-btn, 
+.u-section-1 .u-text,
+.u-section-1 span:not(.icon):not(.fa):not(.fas):not(.far):not(.fab) {
   font-family: 'Poppins', 'Raleway', sans-serif !important;
 }
 
