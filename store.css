@@ -560,3 +560,52 @@ h4.u-content-1.u-text-2 + h4.u-content-1.u-text ul {
   border-radius: 0.40rem !important;
   overflow: hidden; /* This is important for the border radius to work */
 }
+
+/* Base paragraph styling */
+p.u-content-1.u-text {
+  font-family: 'Poppins', 'Raleway', sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-weight: normal;
+}
+
+/* Heading styling */
+h4.u-content-1.u-text-heading {
+  font-size: 1.3rem;
+  font-weight: 500;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  font-family: 'Poppins', 'Raleway', sans-serif;
+}
+
+/* List item styling */
+.u-content-1.u-text ul li {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
+}
+
+/* Responsive font sizing */
+@media (max-width: 768px) {
+  p.u-content-1.u-text, 
+  .u-content-1.u-text ul li {
+    font-size: 1rem;
+  }
+  
+  h4.u-content-1.u-text-heading {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 575px) {
+  p.u-content-1.u-text, 
+  .u-content-1.u-text ul li {
+    font-size: 0.95rem;
+  }
+  
+  h4.u-content-1.u-text-heading {
+    font-size: 1.15rem;
+  }
+}
