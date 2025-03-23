@@ -711,3 +711,65 @@ div.u-content-1.u-text ul li {
   font-size: 1.1rem !important;
   line-height: 1.6 !important;
 }
+
+/* Banner styling */
+.banner-section {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+
+.banner-container {
+  position: relative;
+  width: 100%;
+  max-width: 1140px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.logo-container {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 10;
+  max-width: 150px;
+}
+
+.company-logo {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.banner-image-container {
+  width: 100%;
+}
+
+.banner-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .logo-container {
+    max-width: 120px;
+    top: 15px;
+    left: 15px;
+  }
+}
+
+@media (max-width: 575px) {
+  .logo-container {
+    max-width: 100px;
+    top: 10px;
+    left: 10px;
+  }
+  
+  .banner-section {
+    margin-bottom: 20px;
+  }
+}
