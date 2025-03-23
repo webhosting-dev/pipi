@@ -680,3 +680,29 @@ p.u-content-1.u-text li {
 .u-content-1.u-text p b + ul li {
   font-size: 1.1rem !important;
 }
+
+/* Target the specific div structure you're using */
+div.u-content-1.u-text p,
+div.u-content-1.u-text p b {
+  font-size: 1.1rem !important;
+  font-family: 'Poppins', 'Raleway', sans-serif !important;
+}
+
+div.u-content-1.u-text ul li {
+  font-size: 1.1rem !important;
+  line-height: 1.6 !important;
+  font-family: 'Poppins', 'Raleway', sans-serif !important;
+}
+
+/* Override any potential inheritance issues */
+div.u-content-1.u-text * {
+  font-family: 'Poppins', 'Raleway', sans-serif !important;
+}
+
+/* Force consistent styling on all list items */
+.u-section-1 ul li,
+.u-section-1 div ul li,
+div.u-content-1.u-text ul li {
+  font-size: 1.1rem !important;
+  line-height: 1.6 !important;
+}
