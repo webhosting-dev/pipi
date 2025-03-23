@@ -784,12 +784,3 @@ div.u-content-1.u-text ul li {
   margin-left: calc(-50vw + 50%);
   margin-bottom: 0;
 }
-
-/* White line above banner */
-.white-line {
-  width: 100vw;
-  height: 10px;
-  background-color: #FFFFFF;
-  margin-left: calc(-50vw + 50%);
-  margin-bottom: 0;
-}
