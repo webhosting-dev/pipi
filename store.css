@@ -732,7 +732,7 @@ div.u-content-1.u-text ul li {
 .logo-container {
   position: absolute;
   top: 50%;
-  left: 10%;
+  margin-left: 20px;
   transform: translateY(-50%);
   z-index: 10;
   width: 50px; /* Fixed very small size */
