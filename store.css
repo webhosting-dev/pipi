@@ -661,3 +661,22 @@ p.u-content-1.u-text li {
 .u-section-1 li {
   text-align: left !important;
 }
+
+/* Make Module headings and list text consistent with paragraph size */
+.u-content-1.u-text b {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+/* Ensure list text is the same size as paragraph text */
+.u-content-1.u-text ul li {
+  font-size: 1.1rem !important;
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
+  text-align: left !important;
+}
+
+/* Specifically target Module lists */
+.u-content-1.u-text p b + ul li {
+  font-size: 1.1rem !important;
+}
