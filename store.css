@@ -609,3 +609,20 @@ h4.u-content-1.u-text-heading {
     font-size: 1.15rem;
   }
 }
+
+/* Left align bullet points */
+.u-content-1.u-text ul {
+  text-align: left !important;
+  margin-left: 0;
+  padding-left: 20px; /* Standard indentation for lists */
+}
+
+.u-content-1.u-text ul li {
+  text-align: left !important;
+}
+
+/* If there's a div inside the ul that's causing alignment issues */
+.u-content-1.u-text ul div {
+  text-align: left !important;
+  margin-left: 0 !important; /* Remove the inline margin */
+}
