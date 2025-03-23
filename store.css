@@ -627,8 +627,9 @@ h4.u-content-1.u-text-heading {
   margin-left: 0 !important; /* Remove the inline margin */
 }
 
-/* Replace the inline margin-left style */
+/* Add proper indentation for lists */
 .u-content-1.u-text ul {
   margin-left: 0;
-  padding-left: 50px; /* Match your inline style value */
+  padding-left: 50px !important;
+  text-align: left !important;
 }
