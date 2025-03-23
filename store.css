@@ -776,11 +776,12 @@ div.u-content-1.u-text ul li {
   }
 }
 
-/* Green stripe above banner */
+/* Green stripe with white border below */
 .green-stripe {
   width: 100vw;
   height: 65px;
   background-color: #86B5AD;
   margin-left: calc(-50vw + 50%);
-  margin-bottom: 0;
+  box-sizing: border-box;
+  border-bottom: 2px solid white; /* Thin white line below the green stripe */
 }
