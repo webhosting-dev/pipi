@@ -712,18 +712,19 @@ div.u-content-1.u-text ul li {
   line-height: 1.6 !important;
 }
 
-/* Banner styling */
+/* Banner styling - updated */
 .banner-section {
   width: 100%;
   position: relative;
   overflow: hidden;
   margin-bottom: 30px;
+  height: 133px; /* Fixed height as requested */
 }
 
 .banner-container {
   position: relative;
   width: 100%;
-  max-width: 1140px;
+  height: 100%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -731,10 +732,11 @@ div.u-content-1.u-text ul li {
 
 .logo-container {
   position: absolute;
-  top: 20px;
+  top: 50%;
   left: 20px;
+  transform: translateY(-50%);
   z-index: 10;
-  max-width: 150px;
+  max-width: 80px; /* Much smaller logo */
 }
 
 .company-logo {
@@ -745,27 +747,30 @@ div.u-content-1.u-text ul li {
 
 .banner-image-container {
   width: 100%;
+  height: 100%;
+  overflow: hidden;
 }
 
 .banner-image {
   width: 100%;
-  height: auto;
+  min-width: 100vw; /* Ensures image stretches across full viewport width */
+  height: 133px; /* Fixed height */
+  object-fit: cover; /* Ensures image covers the area without distortion */
+  object-position: center; /* Centers the image vertically */
   display: block;
 }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .logo-container {
-    max-width: 120px;
-    top: 15px;
+    max-width: 70px;
     left: 15px;
   }
 }
 
 @media (max-width: 575px) {
   .logo-container {
-    max-width: 100px;
-    top: 10px;
+    max-width: 60px;
     left: 10px;
   }
   
