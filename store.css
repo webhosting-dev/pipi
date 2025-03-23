@@ -772,3 +772,12 @@ div.u-content-1.u-text ul li {
     left: 5%;
   }
 }
+
+/* Green stripe above banner */
+.green-stripe {
+  width: 100vw;
+  height: 30px;
+  background-color: #86B5AD;
+  margin-left: calc(-50vw + 50%);
+  margin-bottom: 0;
+}
