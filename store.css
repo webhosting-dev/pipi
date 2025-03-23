@@ -756,9 +756,11 @@ div.u-content-1.u-text ul li {
 
 .banner-image {
   width: 100vw; /* Full viewport width */
-  height: 133px;
+  height: auto; /* Let it maintain aspect ratio */
+  min-height: 133px;
   object-fit: cover;
-  object-position: center;
+  object-position: center top; /* Position from the top instead of center */
+  transform: translateY(-30px); /* Move image up to show more of the top */
 }
 
 /* Responsive adjustments */
