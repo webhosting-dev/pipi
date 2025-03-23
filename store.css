@@ -577,6 +577,7 @@ p.u-content-1.u-text {
   margin-top: 0;
   margin-bottom: 1rem;
   font-weight: normal;
+  text-align: justify !important;
 }
 
 /* Heading styling */
