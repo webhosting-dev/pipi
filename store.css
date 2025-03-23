@@ -779,8 +779,17 @@ div.u-content-1.u-text ul li {
 /* Green stripe above banner */
 .green-stripe {
   width: 100vw;
-  height: 30px;
+  height: 65px;
   background-color: #86B5AD;
+  margin-left: calc(-50vw + 50%);
+  margin-bottom: 0;
+}
+
+/* White line above banner */
+.white-line {
+  width: 100vw;
+  height: 10px;
+  background-color: #FFFFFF;
   margin-left: calc(-50vw + 50%);
   margin-bottom: 0;
 }
