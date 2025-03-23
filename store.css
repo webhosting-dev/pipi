@@ -482,13 +482,18 @@ li.active > .u-button-style.u-active-none {
   }
 }
 
+/* Modified: Changed from justify to left */
 h4.u-content-1.u-text {
+  text-align: left !important;
+}
+
+/* Modified: Keep paragraphs justified but list items left-aligned */
+.u-content-1.u-text p {
   text-align: justify !important;
 }
 
-.u-content-1.u-text p, 
 .u-content-1.u-text li {
-  text-align: justify !important;
+  text-align: left !important;
 }
 
 /* Add space between headings and paragraphs */
@@ -511,22 +516,25 @@ h4.u-content-1.u-text-2 + h4.u-content-1.u-text ul {
   margin-top: 5px !important;
 }
 
-/* Adjust the list itself */
+/* Adjust the list itself - Modified with stronger left alignment */
 .u-content-1.u-text ul {
   margin-top: 5px !important;
   margin-bottom: 10px !important;
   padding-top: 0 !important;
+  text-align: left !important;
 }
 
-/* Adjust list items spacing */
+/* Adjust list items spacing - Modified with stronger left alignment */
 .u-content-1.u-text li {
   margin-bottom: 5px !important;
+  text-align: left !important;
 }
 
 /* Fix the spacing for the container div inside lists */
 .u-content-1.u-text ul div {
   margin-top: 0 !important;
   margin-bottom: 0 !important;
+  text-align: left !important;
 }
 
 /* Make all images match text width and add frames */
@@ -585,6 +593,7 @@ h4.u-content-1.u-text-heading {
   font-size: 1.1rem;
   line-height: 1.6;
   margin-bottom: 0.5rem;
+  text-align: left !important;
 }
 
 /* Responsive font sizing */
@@ -610,26 +619,44 @@ h4.u-content-1.u-text-heading {
   }
 }
 
-/* Left align bullet points */
-.u-content-1.u-text ul {
+/* Left align bullet points - with stronger, more specific selectors */
+.u-content-1.u-text ul,
+.u-section-1 .u-content-1.u-text ul,
+div.u-content.u-sheet.u-sheet-1 .u-content-1.u-text ul {
   text-align: left !important;
-  margin-left: 0;
-  padding-left: 20px; /* Standard indentation for lists */
-}
-
-.u-content-1.u-text ul li {
-  text-align: left !important;
-}
-
-/* If there's a div inside the ul that's causing alignment issues */
-.u-content-1.u-text ul div {
-  text-align: left !important;
-  margin-left: 0 !important; /* Remove the inline margin */
-}
-
-/* Add proper indentation for lists */
-.u-content-1.u-text ul {
-  margin-left: 0;
+  margin-left: 0 !important;
   padding-left: 50px !important;
+  list-style-position: outside !important;
+}
+
+.u-content-1.u-text ul li,
+.u-section-1 .u-content-1.u-text ul li,
+div.u-content.u-sheet.u-sheet-1 .u-content-1.u-text ul li {
+  text-align: left !important;
+  display: list-item !important;
+}
+
+/* Ensure all list items are left aligned regardless of context */
+li {
+  text-align: left !important;
+}
+
+/* Override any center alignment from parent containers */
+.u-content.u-sheet.u-sheet-1 ul,
+.u-content.u-sheet.u-sheet-1 li,
+.u-align-center ul,
+.u-align-center li {
+  text-align: left !important;
+}
+
+/* Target nested HTML structure issues with lists inside paragraphs */
+p.u-content-1.u-text ul,
+p.u-content-1.u-text li {
+  text-align: left !important;
+}
+
+/* Force list alignment with !important on specific HTML structure */
+.u-section-1 ul,
+.u-section-1 li {
   text-align: left !important;
 }
