@@ -787,3 +787,33 @@ div.u-content-1.u-text ul li {
   box-sizing: border-box;
   border-bottom: 2px solid white; /* Thin white line below the green stripe */
 }
+
+
+/* Enhanced price styling with maximum specificity */
+h2.u-align-center.u-text.u-text-default.u-text-4,
+.u-section-1 h2.u-align-center.u-text.u-text-default.u-text-4,
+section.u-section-1 div.u-content.u-sheet.u-sheet-1 h2.u-align-center.u-text.u-text-default.u-text-4 {
+  display: block !important;
+  visibility: visible !important;
+  font-size: 2.3rem !important;
+  font-weight: 400 !important;
+  font-family: 'Poppins', 'Raleway', sans-serif !important;
+  margin: 30px auto 15px !important;
+  color: #111111 !important;
+  position: relative !important;
+  z-index: 100 !important;
+  text-align: center !important;
+}
+
+/* Additional styles to ensure the price is visible */
+h2.u-text-4::before {
+  content: '' !important;
+  display: block !important;
+  height: 20px !important; /* Creates some space above */
+}
+
+h2.u-text-4::after {
+  content: '' !important;
+  display: block !important;
+  height: 5px !important; /* Creates some space below */
+}
