@@ -877,3 +877,70 @@ h2.u-text-4::after {
     width: 100%; /* Full width on very small screens */
   }
 }
+
+/* Image container for 2/3 width with hover expansion capability */
+.image-container {
+  width: 66.666%; /* 2/3 of original width */
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  position: relative; /* Needed for positioning context */
+}
+
+/* Single image hover effect */
+.image-container > a {
+  display: block;
+  position: relative;
+  overflow: visible;
+}
+
+.image-container > a img {
+  transition: all 0.3s ease;
+  max-width: 100%;
+  display: block;
+}
+
+.image-container > a:hover img {
+  position: relative;
+  transform: scale(1.5); /* Scales to 3/2 of the current size = original full size */
+  z-index: 1000; /* Ensures it appears above other content */
+  box-shadow: 0 0 15px rgba(0,0,0,0.3); /* Adds shadow for better visual separation */
+}
+
+/* For table-based side-by-side images */
+.image-container table img {
+  transition: all 0.3s ease;
+}
+
+.image-container table a:hover img {
+  position: relative;
+  transform: scale(1.5);
+  z-index: 1000;
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+}
+
+/* Responsive adjustment */
+@media (max-width: 768px) {
+  .image-container {
+    width: 85%;
+  }
+  
+  /* Adjust scale factor for smaller screens */
+  .image-container > a:hover img,
+  .image-container table a:hover img {
+    transform: scale(1.18); /* 100/85 = ~1.18 */
+  }
+}
+
+@media (max-width: 575px) {
+  .image-container {
+    width: 100%;
+  }
+  
+  /* No scaling needed on mobile as already at full width */
+  .image-container > a:hover img,
+  .image-container table a:hover img {
+    transform: none;
+    box-shadow: none;
+  }
+}
