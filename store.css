@@ -851,3 +851,29 @@ h2.u-text-4::after {
     margin-bottom: 10px;
   }
 }
+
+/* Image container for 2/3 width */
+.image-container {
+  width: 66.666%; /* 2/3 of original width */
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+/* Ensure the image inside maintains proper styling */
+.image-container img {
+  max-width: 100%;
+}
+
+/* Responsive adjustment */
+@media (max-width: 768px) {
+  .image-container {
+    width: 85%; /* Slightly larger on smaller screens */
+  }
+}
+
+@media (max-width: 575px) {
+  .image-container {
+    width: 100%; /* Full width on very small screens */
+  }
+}
