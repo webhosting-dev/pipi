@@ -945,3 +945,31 @@ h2.u-text-4::after {
     box-shadow: none;
   }
 }
+
+/* Styling for the new button wrapper to match image width */
+.title-button-wrapper {
+  width: 400px; /* Same width as the image-wrapper */
+  margin: 15px auto 30px; /* Space above and below the button */
+  display: block;
+}
+
+/* Styling for the new Buy Now button */
+.u-btn-title {
+  width: 100%; /* Make the button take the full width of the wrapper */
+  display: block !important;
+  border-radius: 5px !important;
+  background-color: #E8988D !important;
+  color: #ffffff !important;
+  font-family: 'Poppins', 'Raleway', sans-serif !important;
+  font-weight: 500 !important;
+  text-transform: uppercase !important;
+  font-size: 1.6rem !important;
+  letter-spacing: 1px !important;
+  text-align: center !important;
+  padding: 7px 0 !important;
+  transition: background-color 0.3s ease !important;
+}
+
+.u-btn-title:hover {
+  background-color: #86B5AD !important;
+}
