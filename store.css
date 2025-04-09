@@ -949,7 +949,7 @@ h2.u-text-4::after {
 /* Styling for the new button wrapper to match image width */
 .title-button-wrapper {
   width: 400px; /* Same width as the image-wrapper */
-  margin: 15px auto 30px; /* Space above and below the button */
+  margin: 1px auto 30px; /* Space above and below the button */
   display: flex;
   justify-content: center; /* Center the button horizontally */
 }
