@@ -950,12 +950,13 @@ h2.u-text-4::after {
 .title-button-wrapper {
   width: 400px; /* Same width as the image-wrapper */
   margin: 15px auto 30px; /* Space above and below the button */
-  display: block;
+  display: flex;
+  justify-content: center; /* Center the button horizontally */
 }
 
 /* Styling for the new Buy Now button */
 .u-btn-title {
-  width: 100%; /* Make the button take the full width of the wrapper */
+  width: 100%; /* Full width of the wrapper */
   display: block !important;
   border-radius: 5px !important;
   background-color: #E8988D !important;
@@ -963,12 +964,20 @@ h2.u-text-4::after {
   font-family: 'Poppins', 'Raleway', sans-serif !important;
   font-weight: 500 !important;
   text-transform: uppercase !important;
-  font-size: 1.6rem !important;
+  font-size: 1.8rem !important; /* Increased font size to match original */
   letter-spacing: 1px !important;
   text-align: center !important;
-  padding: 7px 0 !important;
+  padding: 10px 0 !important; /* Increased padding for better height */
   transition: background-color 0.3s ease !important;
+  box-sizing: border-box !important;
+  border: none !important;
 }
+
+/* Responsive adjustments */
+@media (max-width: 575px) {
+  .title-button-wrapper {
+    width: 340px; /* Match the smaller image width at this breakpoint */
+  }
 
 .u-btn-title:hover {
   background-color: #86B5AD !important;
