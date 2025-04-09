@@ -430,12 +430,13 @@ li.active > .u-button-style.u-active-none {
   font-weight: 600;
   font-size: 1.8rem;
   color: white;
-  opacity: 0;
+  opacity: 1;
   transition: opacity 1.0s ease;
   z-index: 10;
 }
 
 .image-wrapper::after {
+  display: none;
   content: "Buy Now";
   position: absolute;
   bottom: 0;
@@ -943,45 +944,4 @@ h2.u-text-4::after {
     transform: none;
     box-shadow: none;
   }
-}
-
-/* Make price tag visible by default (no hover needed) */
-.image-wrapper::before {
-  opacity: 1; /* Changed from 0 to 1 */
-  transition: none; /* Remove transition since it's always visible */
-}
-
-/* Remove the "Buy Now" text from bottom of image on hover */
-.image-wrapper::after {
-  display: none; /* Hide completely */
-}
-
-/* Keep price tag visible on hover */
-.image-wrapper:hover::before,
-.image-wrapper:hover::after {
-  opacity: 1; /* Only affects the price tag now */
-}
-
-/* Remove the click pointer from the image wrapper */
-.image-wrapper {
-  cursor: default;
-}
-
-/* Enhance the existing Buy Now button below the image */
-.u-section-1 .u-btn-3,
-.u-btn.u-button-style.u-custom-color-1.u-btn-3 {
-  margin-top: 30px;
-  margin-bottom: 60px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 10px 80px; /* Slightly larger padding */
-  letter-spacing: 1.5px; /* Slightly increased letter spacing */
-  font-weight: 600; /* Make font slightly bolder */
-  transition: background-color 0.3s ease, transform 0.2s ease; /* Add transition for transform */
-}
-
-.u-section-1 .u-btn-3:hover,
-.u-btn.u-button-style.u-custom-color-1.u-btn-3:hover {
-  transform: scale(1.05); /* Slightly grow the button on hover */
 }
