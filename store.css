@@ -979,6 +979,11 @@ h2.u-text-4::after {
     width: 340px; /* Match the smaller image width at this breakpoint */
   }
 
+  .u-btn-title {
+    font-size: 1.4rem !important;
+  }
+}
+  
 .u-btn-title:hover {
   background-color: #86B5AD !important;
 }
