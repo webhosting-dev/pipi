@@ -1053,8 +1053,10 @@ h2.u-text-4::after {
 
 /* Change border color on hover */
 .image-col-three:hover .image-thumb-container {
-  border-color: #E8988D;
-  overflow: visible; /* Allow overflow on hover */
+  overflow: visible;
+  padding-top: 0; /* Remove the fixed aspect ratio on hover */
+  height: auto;
+  min-height: 100%;
 }
 
 /* Image styling within thumbnail */
