@@ -1008,6 +1008,7 @@ h2.u-text-4::after {
   gap: 10px !important;
   margin: 0 auto !important;
   overflow: visible !important; /* Critical for hover to work */
+  position: relative !important; /* Add this to create a new stacking context */
 }
 
 /* Individual column for each image */
@@ -1041,7 +1042,7 @@ h2.u-text-4::after {
   border-radius: 0.40rem !important;
   border: 2px solid #86B5AD !important;
   box-sizing: border-box !important;
-  transition: all 0.2s ease !important; /* Add transition to container too */
+  transition: all 0.6s ease !important; /* Slower transition - 0.6s instead of 0.2s */
 }
 
 /* Image styling within thumbnail */
@@ -1053,7 +1054,7 @@ h2.u-text-4::after {
   height: 100% !important;
   object-fit: cover !important;
   object-position: center !important;
-  transition: all 0.3s ease !important;
+  transition: all 0.6s ease !important; /* Slower transition - 0.6s instead of 0.3s */
   border-radius: 0.38rem !important;
   border: none !important;
   margin: 0 !important;
@@ -1061,38 +1062,51 @@ h2.u-text-4::after {
 }
 
 /* ENHANCED HOVER EFFECT */
-/* 1. Make ALL parent elements have overflow:visible on hover */
+/* 1. Make ALL parent elements have overflow:visible and high z-index on hover */
 .three-image-section .image-col-three:hover {
-  z-index: 9999 !important;
+  z-index: 99999 !important; /* Extra high z-index */
   overflow: visible !important;
+  position: relative !important;
 }
 
 .three-image-section .image-link-three:hover {
-  z-index: 9999 !important;
+  z-index: 99999 !important; /* Extra high z-index */
   overflow: visible !important;
+  position: relative !important;
 }
 
 /* 2. Make the container overflow:visible on hover */
 .three-image-section .image-link-three:hover .image-thumb-container {
   overflow: visible !important;
-  z-index: 9999 !important;
+  z-index: 99999 !important; /* Extra high z-index */
   border-color: #E8988D !important; /* Change border color on hover */
+  position: relative !important;
 }
 
-/* 3. Apply transform to the image */
+/* 3. Apply transform to the image - larger scale factor of 2.7 (was 1.8) */
 .three-image-section .image-link-three:hover .thumb-image {
-  transform: scale(1.8) !important;
+  transform: scale(2.7) !important; /* Larger zoom - 50% more than before */
   object-fit: contain !important;
   box-shadow: 0 0 20px rgba(0,0,0,0.4) !important;
-  z-index: 9999 !important;
+  z-index: 99999 !important; /* Extra high z-index */
+  position: relative !important;
 }
 
 /* 4. Add a :hover directly to the image as a fallback */
 .three-image-section .thumb-image:hover {
-  transform: scale(1.8) !important;
+  transform: scale(2.7) !important; /* Larger zoom - matching the above */
   object-fit: contain !important;
-  z-index: 9999 !important;
+  z-index: 99999 !important; /* Extra high z-index */
   box-shadow: 0 0 20px rgba(0,0,0,0.4) !important;
+  position: relative !important;
+}
+
+/* Force the first column to have even higher z-index to fix specific issue */
+.three-image-section .image-col-three:first-child:hover,
+.three-image-section .image-col-three:first-child:hover .image-link-three,
+.three-image-section .image-col-three:first-child:hover .image-thumb-container,
+.three-image-section .image-col-three:first-child:hover .thumb-image {
+  z-index: 999999 !important; /* Super high z-index for first image */
 }
 
 /* Responsive adjustments */
@@ -1104,7 +1118,7 @@ h2.u-text-4::after {
   
   .three-image-section .image-link-three:hover .thumb-image,
   .three-image-section .thumb-image:hover {
-    transform: scale(1.5) !important;
+    transform: scale(2.25) !important; /* Adjusted for medium screens */
   }
 }
 
@@ -1125,6 +1139,6 @@ h2.u-text-4::after {
   
   .three-image-section .image-link-three:hover .thumb-image,
   .three-image-section .thumb-image:hover {
-    transform: scale(1.2) !important;
+    transform: scale(1.8) !important; /* Adjusted for small screens */
   }
 }
