@@ -987,3 +987,96 @@ h2.u-text-4::after {
     font-size: 1.4rem !important; /* Slightly smaller font on mobile */
   }
 }
+
+/* Three images in a row with equal sizing and hover expansion */
+
+/* Container for the entire row */
+.image-row-three {
+  display: flex;
+  width: 100%;
+  gap: 10px; /* Reduced gap between images */
+  margin: 25px auto;
+}
+
+/* Individual column for each image - exactly 1/3 width */
+.image-col-three {
+  flex: 1;
+  width: 33.333%;
+  position: relative;
+}
+
+/* Link container */
+.image-link {
+  display: block;
+  position: relative;
+  text-decoration: none;
+  width: 100%;
+}
+
+/* Thumbnail container with fixed aspect ratio */
+.image-thumb-container {
+  position: relative;
+  width: 100%;
+  padding-top: 75%; /* 4:3 aspect ratio - can be adjusted */
+  overflow: hidden; /* Hide overflow in thumbnail state */
+  border-radius: 0.40rem;
+  border: 2px solid #86B5AD;
+}
+
+/* Image styling within thumbnail */
+.image-thumb-container img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures image covers the container area */
+  object-position: center; /* Centers the image */
+  transition: all 0.3s ease;
+  border-radius: 0.38rem; /* Slightly smaller than container to account for border */
+  border: none; /* Remove border as it's on the container */
+}
+
+/* Hover effect */
+.image-link:hover .image-thumb-container {
+  overflow: visible; /* Allow image to expand beyond container */
+  z-index: 100; /* Ensure it appears above other elements */
+}
+
+.image-link:hover img {
+  transform: scale(1.8); /* Scale factor for hover expansion */
+  object-fit: contain; /* Show whole image on hover */
+  box-shadow: 0 0 20px rgba(0,0,0,0.4); /* Shadow for visual separation */
+  z-index: 1000; 
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .image-row-three {
+    width: 100%;
+    gap: 8px;
+  }
+  
+  .image-link:hover img {
+    transform: scale(1.5); /* Smaller expansion on medium screens */
+  }
+}
+
+@media (max-width: 575px) {
+  .image-row-three {
+    flex-direction: column; /* Stack vertically on mobile */
+    gap: 15px;
+  }
+  
+  .image-col-three {
+    width: 100%;
+  }
+  
+  .image-thumb-container {
+    padding-top: 66.666%; /* Wider aspect ratio on mobile */
+  }
+  
+  .image-link:hover img {
+    transform: scale(1.2); /* Minimal expansion on small screens */
+  }
+}
