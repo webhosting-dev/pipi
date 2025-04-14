@@ -991,6 +991,8 @@ h2.u-text-4::after {
 
 /* Three images in a row with equal sizing, hover expansion, synchronized frame and image scaling */
 
+/* Simple CSS for three-image layout - the hover effect is now handled by JavaScript */
+
 /* Overall section container */
 .three-image-section {
   width: 100%;
@@ -1053,99 +1055,18 @@ h2.u-text-4::after {
   border: none !important;
   margin: 0 !important;
   display: block !important;
-  transition: transform 1.2s ease !important; /* Slower transition */
 }
 
-/* IMPROVED POPUP WITH EXTENDED HOVER AREA */
-.image-col-three {
-  position: relative !important;
-}
-
-/* The white background frame with shadow - with transition */
-.image-col-three::after {
-  content: "";
-  opacity: 0; /* Start transparent instead of display:none for transition */
-  visibility: hidden; /* Hide by default */
-  position: absolute !important;
-  top: 50% !important;
-  left: 50% !important;
-  transform: translate(-50%, -50%) !important;
-  width: 270% !important;
-  height: 270% !important;
-  background-color: white !important;
-  border-radius: 10px !important;
-  box-shadow: 0 0 25px rgba(0,0,0,0.5) !important;
-  z-index: 999999 !important;
-  transition: opacity 1.2s ease, visibility 0s 1.2s !important; /* Slow transition */
-}
-
-/* The expanded image - with transition */
-.image-col-three::before {
-  content: "";
-  opacity: 0; /* Start transparent instead of display:none for transition */
-  visibility: hidden; /* Hide by default */
-  position: absolute !important;
-  top: 50% !important;
-  left: 50% !important;
-  transform: translate(-50%, -50%) !important;
-  width: 250% !important;
-  height: 250% !important;
-  background-size: contain !important;
-  background-repeat: no-repeat !important;
-  background-position: center center !important;
-  z-index: 9999999 !important;
-  transition: opacity 1.2s ease, visibility 0s 1.2s !important; /* Slow transition */
-}
-
-/* Image source specifications for each column */
-.image-col-three:nth-child(1)::before {
-  background-image: var(--img-src-1, url('https://www.hostinger.com/projects/abc/Literacy_01.jpg')) !important;
-}
-
-.image-col-three:nth-child(2)::before {
-  background-image: var(--img-src-2, url('https://www.hostinger.com/projects/abc/Literacy_02.jpg')) !important;
-}
-
-.image-col-three:nth-child(3)::before {
-  background-image: var(--img-src-3, url('https://www.hostinger.com/projects/abc/Literacy_03.jpg')) !important;
-}
-
-/* Show the popup elements with transition on hover */
-.image-col-three:hover::after,
-.image-col-three:hover::before {
-  opacity: 1 !important; /* Fade in */
-  visibility: visible !important; /* Make visible */
-  transition: opacity 1.2s ease, visibility 0s !important; /* Slow transition */
-}
-
-/* Create expanded invisible hover area on the pseudo elements */
-.image-col-three::before,
-.image-col-three::after {
-  pointer-events: none !important; /* Don't catch mouse events by default */
-}
-
-/* When hovering the column, create an expanded hover detection area */
-.image-col-three:hover::before,
-.image-col-three:hover::after {
-  pointer-events: auto !important; /* Now detect mouse events to maintain hover */
-}
-
-/* Ensure the popup also triggers hover state on the parent */
-.image-col-three::before:hover + .image-col-three,
-.image-col-three::after:hover + .image-col-three {
-  /* This is a CSS trick to maintain hover state */
+/* Change border color on hover */
+.three-image-section .image-col-three:hover .image-thumb-container {
+  border-color: #E8988D !important;
 }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
-  .image-col-three::after {
-    width: 225% !important;
-    height: 225% !important;
-  }
-  
-  .image-col-three::before {
-    width: 200% !important;
-    height: 200% !important;
+  .three-image-section .image-row-three {
+    width: 100% !important;
+    gap: 8px !important;
   }
 }
 
@@ -1162,15 +1083,5 @@ h2.u-text-4::after {
   
   .three-image-section .image-thumb-container {
     padding-top: 66.666% !important;
-  }
-  
-  .image-col-three::after {
-    width: 180% !important;
-    height: 180% !important;
-  }
-  
-  .image-col-three::before {
-    width: 160% !important;
-    height: 160% !important;
   }
 }
