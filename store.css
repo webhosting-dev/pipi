@@ -1138,5 +1138,37 @@ h2.u-text-4::after {
 .image-popup {
   position: absolute !important;
   z-index: 999999 !important;
-  /* ...rest of the CSS... */
+  background-color: white !important;
+  box-shadow: 0 0 25px rgba(0,0,0,0.5) !important;
+  border-radius: 10px !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  transition: opacity 1.2s ease, visibility 0s 1.2s !important;
+  pointer-events: none !important;
+  transform: translate(-50%, -50%) !important;
+}
+
+.image-popup.active {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transition: opacity 1.2s ease, visibility 0s !important;
+  pointer-events: auto !important;
+}
+
+.popup-image {
+  width: 100% !important;
+  height: 100% !important;
+  padding: 15px !important;
+  box-sizing: border-box !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.popup-image img {
+  max-width: 100% !important;
+  max-height: 100% !important;
+  object-fit: contain !important;
+  display: block !important;
+  border: none !important;
 }
