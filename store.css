@@ -991,13 +991,12 @@ h2.u-text-4::after {
 
 /* Three images in a row with equal sizing, hover expansion, synchronized frame and image scaling */
 
-/* Overall section container - ensure it allows overflow */
+/* Overall section container */
 .three-image-section {
   width: 100%;
   margin: 25px auto;
   display: block;
   position: relative;
-  overflow: visible !important;
 }
 
 /* Container for the entire row */
@@ -1007,7 +1006,6 @@ h2.u-text-4::after {
   width: 100% !important;
   gap: 10px !important;
   margin: 0 auto !important;
-  overflow: visible !important;
   position: relative !important;
 }
 
@@ -1020,7 +1018,6 @@ h2.u-text-4::after {
   display: block !important;
   box-sizing: border-box !important;
   margin: 0 !important;
-  overflow: visible !important;
 }
 
 /* Link container */
@@ -1030,7 +1027,6 @@ h2.u-text-4::after {
   text-decoration: none !important;
   width: 100% !important;
   box-sizing: border-box !important;
-  overflow: visible !important;
 }
 
 /* Thumbnail container with fixed aspect ratio */
@@ -1038,11 +1034,10 @@ h2.u-text-4::after {
   position: relative !important;
   width: 100% !important;
   padding-top: 75% !important; /* 4:3 aspect ratio */
-  overflow: hidden !important; /* Hide overflow INITIALLY */
   border-radius: 0.40rem !important;
   border: 2px solid #86B5AD !important;
   box-sizing: border-box !important;
-  transition: all 0.6s ease !important;
+  overflow: hidden !important; /* Always hide overflow */
 }
 
 /* Image styling within thumbnail */
@@ -1054,56 +1049,87 @@ h2.u-text-4::after {
   height: 100% !important;
   object-fit: cover !important;
   object-position: center !important;
-  transition: all 0.6s ease !important;
   border-radius: 0.38rem !important;
   border: none !important;
   margin: 0 !important;
   display: block !important;
+  transition: transform 0.6s ease !important;
 }
 
-/* COMPLETELY REVISED HOVER APPROACH */
-/* Create a wrapper for the zoomed content */
-.three-image-section .image-col-three {
-  transform-origin: center center !important;
+/* COMPLETELY NEW APPROACH: Use a separate popup element on hover */
+.image-col-three {
+  position: relative !important;
 }
 
-/* On hover, create a zoomed wrapper */
-.three-image-section .image-col-three:hover {
+/* Create a popup element that appears on hover */
+.image-col-three::after {
+  content: "";
+  display: none; /* Hidden by default */
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  width: 270% !important; /* Much larger than the original */
+  height: 270% !important;
+  background-color: white !important;
+  border-radius: 10px !important;
+  box-shadow: 0 0 25px rgba(0,0,0,0.5) !important;
   z-index: 999999 !important;
-  overflow: visible !important;
+  pointer-events: none !important; /* So it doesn't interfere with hover */
 }
 
-/* Scale the entire column on hover - this scales everything together */
-.three-image-section .image-col-three:hover {
-  transform: scale(2.7) !important;
+/* Make the expanded image appear on hover */
+.image-col-three:hover::after {
+  display: block !important;
 }
 
-/* Change appearance of the container on hover */
-.three-image-section .image-col-three:hover .image-thumb-container {
-  overflow: visible !important;
-  border-color: #E8988D !important;
-  box-shadow: 0 0 20px rgba(0,0,0,0.4) !important;
+/* Create an expanded image element */
+.image-col-three::before {
+  content: "";
+  display: none; /* Hidden by default */
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  width: 250% !important; /* Slightly smaller than the white background */
+  height: 250% !important;
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+  background-position: center center !important;
+  z-index: 9999999 !important;
+  pointer-events: none !important;
 }
 
-/* Change the image fit on hover to show complete image */
-.three-image-section .image-col-three:hover .thumb-image {
-  object-fit: contain !important;
+/* First image specific background */
+.image-col-three:nth-child(1)::before {
+  background-image: var(--img-src-1, url('https://www.hostinger.com/projects/abc/Literacy_01.jpg')) !important;
 }
 
-/* Extra styling for the first image to ensure it appears on top */
-.three-image-section .image-col-three:first-child:hover {
-  z-index: 999999 !important;
+/* Second image specific background */
+.image-col-three:nth-child(2)::before {
+  background-image: var(--img-src-2, url('https://www.hostinger.com/projects/abc/Literacy_02.jpg')) !important;
+}
+
+/* Third image specific background */
+.image-col-three:nth-child(3)::before {
+  background-image: var(--img-src-3, url('https://www.hostinger.com/projects/abc/Literacy_03.jpg')) !important;
+}
+
+/* Show the expanded image on hover */
+.image-col-three:hover::before {
+  display: block !important;
 }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
-  .three-image-section .image-row-three {
-    width: 100% !important;
-    gap: 8px !important;
+  .image-col-three::after {
+    width: 225% !important;
+    height: 225% !important;
   }
   
-  .three-image-section .image-col-three:hover {
-    transform: scale(2.25) !important;
+  .image-col-three::before {
+    width: 200% !important;
+    height: 200% !important;
   }
 }
 
@@ -1122,7 +1148,13 @@ h2.u-text-4::after {
     padding-top: 66.666% !important;
   }
   
-  .three-image-section .image-col-three:hover {
-    transform: scale(1.8) !important;
+  .image-col-three::after {
+    width: 180% !important;
+    height: 180% !important;
+  }
+  
+  .image-col-three::before {
+    width: 160% !important;
+    height: 160% !important;
   }
 }
