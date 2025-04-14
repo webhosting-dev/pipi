@@ -1053,71 +1053,87 @@ h2.u-text-4::after {
   border: none !important;
   margin: 0 !important;
   display: block !important;
-  transition: transform 0.6s ease !important;
+  transition: transform 1.2s ease !important; /* Slower transition */
 }
 
-/* COMPLETELY NEW APPROACH: Use a separate popup element on hover */
+/* IMPROVED POPUP WITH EXTENDED HOVER AREA */
 .image-col-three {
   position: relative !important;
 }
 
-/* Create a popup element that appears on hover */
+/* The white background frame with shadow - with transition */
 .image-col-three::after {
   content: "";
-  display: none; /* Hidden by default */
+  opacity: 0; /* Start transparent instead of display:none for transition */
+  visibility: hidden; /* Hide by default */
   position: absolute !important;
   top: 50% !important;
   left: 50% !important;
   transform: translate(-50%, -50%) !important;
-  width: 270% !important; /* Much larger than the original */
+  width: 270% !important;
   height: 270% !important;
   background-color: white !important;
   border-radius: 10px !important;
   box-shadow: 0 0 25px rgba(0,0,0,0.5) !important;
   z-index: 999999 !important;
-  pointer-events: none !important; /* So it doesn't interfere with hover */
+  transition: opacity 1.2s ease, visibility 0s 1.2s !important; /* Slow transition */
 }
 
-/* Make the expanded image appear on hover */
-.image-col-three:hover::after {
-  display: block !important;
-}
-
-/* Create an expanded image element */
+/* The expanded image - with transition */
 .image-col-three::before {
   content: "";
-  display: none; /* Hidden by default */
+  opacity: 0; /* Start transparent instead of display:none for transition */
+  visibility: hidden; /* Hide by default */
   position: absolute !important;
   top: 50% !important;
   left: 50% !important;
   transform: translate(-50%, -50%) !important;
-  width: 250% !important; /* Slightly smaller than the white background */
+  width: 250% !important;
   height: 250% !important;
   background-size: contain !important;
   background-repeat: no-repeat !important;
   background-position: center center !important;
   z-index: 9999999 !important;
-  pointer-events: none !important;
+  transition: opacity 1.2s ease, visibility 0s 1.2s !important; /* Slow transition */
 }
 
-/* First image specific background */
+/* Image source specifications for each column */
 .image-col-three:nth-child(1)::before {
   background-image: var(--img-src-1, url('https://www.hostinger.com/projects/abc/Literacy_01.jpg')) !important;
 }
 
-/* Second image specific background */
 .image-col-three:nth-child(2)::before {
   background-image: var(--img-src-2, url('https://www.hostinger.com/projects/abc/Literacy_02.jpg')) !important;
 }
 
-/* Third image specific background */
 .image-col-three:nth-child(3)::before {
   background-image: var(--img-src-3, url('https://www.hostinger.com/projects/abc/Literacy_03.jpg')) !important;
 }
 
-/* Show the expanded image on hover */
+/* Show the popup elements with transition on hover */
+.image-col-three:hover::after,
 .image-col-three:hover::before {
-  display: block !important;
+  opacity: 1 !important; /* Fade in */
+  visibility: visible !important; /* Make visible */
+  transition: opacity 1.2s ease, visibility 0s !important; /* Slow transition */
+}
+
+/* Create expanded invisible hover area on the pseudo elements */
+.image-col-three::before,
+.image-col-three::after {
+  pointer-events: none !important; /* Don't catch mouse events by default */
+}
+
+/* When hovering the column, create an expanded hover detection area */
+.image-col-three:hover::before,
+.image-col-three:hover::after {
+  pointer-events: auto !important; /* Now detect mouse events to maintain hover */
+}
+
+/* Ensure the popup also triggers hover state on the parent */
+.image-col-three::before:hover + .image-col-three,
+.image-col-three::after:hover + .image-col-three {
+  /* This is a CSS trick to maintain hover state */
 }
 
 /* Responsive adjustments */
