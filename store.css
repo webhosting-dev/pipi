@@ -989,7 +989,7 @@ h2.u-text-4::after {
 }
 
 
-/* Three images in a row with equal sizing and hover expansion */
+/* Three images in a row with equal sizing, hover expansion, synchronized frame and image scaling */
 
 /* Overall section container - ensure it allows overflow */
 .three-image-section {
@@ -997,7 +997,7 @@ h2.u-text-4::after {
   margin: 25px auto;
   display: block;
   position: relative;
-  overflow: visible !important; /* Critical for hover to work */
+  overflow: visible !important;
 }
 
 /* Container for the entire row */
@@ -1007,8 +1007,8 @@ h2.u-text-4::after {
   width: 100% !important;
   gap: 10px !important;
   margin: 0 auto !important;
-  overflow: visible !important; /* Critical for hover to work */
-  position: relative !important; /* Add this to create a new stacking context */
+  overflow: visible !important;
+  position: relative !important;
 }
 
 /* Individual column for each image */
@@ -1020,7 +1020,7 @@ h2.u-text-4::after {
   display: block !important;
   box-sizing: border-box !important;
   margin: 0 !important;
-  overflow: visible !important; /* Critical for hover to work */
+  overflow: visible !important;
 }
 
 /* Link container */
@@ -1030,7 +1030,7 @@ h2.u-text-4::after {
   text-decoration: none !important;
   width: 100% !important;
   box-sizing: border-box !important;
-  overflow: visible !important; /* Critical for hover to work */
+  overflow: visible !important;
 }
 
 /* Thumbnail container with fixed aspect ratio */
@@ -1042,7 +1042,7 @@ h2.u-text-4::after {
   border-radius: 0.40rem !important;
   border: 2px solid #86B5AD !important;
   box-sizing: border-box !important;
-  transition: all 0.6s ease !important; /* Slower transition */
+  transition: all 0.6s ease !important;
 }
 
 /* Image styling within thumbnail */
@@ -1054,76 +1054,45 @@ h2.u-text-4::after {
   height: 100% !important;
   object-fit: cover !important;
   object-position: center !important;
-  transition: all 0.6s ease !important; /* Slower transition */
+  transition: all 0.6s ease !important;
   border-radius: 0.38rem !important;
   border: none !important;
   margin: 0 !important;
   display: block !important;
 }
 
-/* ENHANCED HOVER EFFECT WITH FRAME FIX */
-/* 1. Make ALL parent elements have overflow:visible and high z-index on hover */
+/* COMPLETELY REVISED HOVER APPROACH */
+/* Create a wrapper for the zoomed content */
+.three-image-section .image-col-three {
+  transform-origin: center center !important;
+}
+
+/* On hover, create a zoomed wrapper */
 .three-image-section .image-col-three:hover {
-  z-index: 999999 !important; /* Extra high z-index */
-  overflow: visible !important;
-  position: relative !important;
-}
-
-.three-image-section .image-link-three:hover {
-  z-index: 999999 !important; /* Extra high z-index */
-  overflow: visible !important;
-  position: relative !important;
-}
-
-/* 2. Make the container get a shadow and proper styling on hover */
-.three-image-section .image-link-three:hover .image-thumb-container {
-  overflow: visible !important;
-  z-index: 999999 !important; /* Extra high z-index */
-  border-color: #E8988D !important; /* Change border color on hover */
-  position: relative !important;
-  box-shadow: 0 0 20px rgba(0,0,0,0.4) !important; /* Add shadow to container instead of image */
-}
-
-/* 3. Apply transform to the image and container together */
-.three-image-section .image-link-three:hover .image-thumb-container {
-  transform: scale(1.1) !important; /* Small scale for container */
-}
-
-.three-image-section .image-link-three:hover .thumb-image {
-  transform: scale(2.45) !important; /* Adjusted scale for image (2.7/1.1) */
-  object-fit: contain !important;
-  z-index: 999999 !important; /* Extra high z-index */
-  position: relative !important;
-}
-
-/* 4. Add a :hover directly to the image as a fallback */
-.three-image-section .thumb-image:hover {
-  transform: scale(2.7) !important;
-  object-fit: contain !important;
   z-index: 999999 !important;
-  position: relative !important;
+  overflow: visible !important;
 }
 
-/* Force the first column to have even higher z-index to fix specific issue */
-.three-image-section .image-col-three:first-child:hover,
-.three-image-section .image-col-three:first-child:hover .image-link-three,
-.three-image-section .image-col-three:first-child:hover .image-thumb-container,
-.three-image-section .image-col-three:first-child:hover .thumb-image {
-  z-index: 999999 !important; /* Super high z-index for first image */
+/* Scale the entire column on hover - this scales everything together */
+.three-image-section .image-col-three:hover {
+  transform: scale(2.7) !important;
 }
 
-/* Add a pseudo-element to create a frame effect on hover */
-.three-image-section .image-link-three:hover .image-thumb-container::after {
-  content: "";
-  position: absolute !important;
-  top: -10px !important;
-  left: -10px !important;
-  right: -10px !important;
-  bottom: -10px !important;
-  background-color: rgba(255, 255, 255, 0.9) !important; /* White background for frame */
-  border-radius: 0.8rem !important;
-  z-index: -1 !important; /* Behind the image but above other content */
-  box-shadow: 0 0 25px rgba(0,0,0,0.5) !important; /* Stronger shadow for frame */
+/* Change appearance of the container on hover */
+.three-image-section .image-col-three:hover .image-thumb-container {
+  overflow: visible !important;
+  border-color: #E8988D !important;
+  box-shadow: 0 0 20px rgba(0,0,0,0.4) !important;
+}
+
+/* Change the image fit on hover to show complete image */
+.three-image-section .image-col-three:hover .thumb-image {
+  object-fit: contain !important;
+}
+
+/* Extra styling for the first image to ensure it appears on top */
+.three-image-section .image-col-three:first-child:hover {
+  z-index: 999999 !important;
 }
 
 /* Responsive adjustments */
@@ -1133,15 +1102,7 @@ h2.u-text-4::after {
     gap: 8px !important;
   }
   
-  .three-image-section .image-link-three:hover .image-thumb-container {
-    transform: scale(1.08) !important;
-  }
-  
-  .three-image-section .image-link-three:hover .thumb-image {
-    transform: scale(2.08) !important;
-  }
-  
-  .three-image-section .thumb-image:hover {
+  .three-image-section .image-col-three:hover {
     transform: scale(2.25) !important;
   }
 }
@@ -1161,15 +1122,7 @@ h2.u-text-4::after {
     padding-top: 66.666% !important;
   }
   
-  .three-image-section .image-link-three:hover .image-thumb-container {
-    transform: scale(1.05) !important;
-  }
-  
-  .three-image-section .image-link-three:hover .thumb-image {
-    transform: scale(1.71) !important;
-  }
-  
-  .three-image-section .thumb-image:hover {
+  .three-image-section .image-col-three:hover {
     transform: scale(1.8) !important;
   }
 }
