@@ -1135,3 +1135,58 @@ h2.u-text-4::after {
     transform: scale(1.8);
   }
 }
+
+
+/* GST tag styling */
+html body .image-wrapper .gst-tag {
+  position: absolute !important;
+  top: 80px !important; /* Position it below the price tag */
+  left: 0 !important;
+  width: auto !important;
+  min-width: 44px !important;
+  height: 24px !important;
+  padding: 0 10px !important;
+  background-color: rgba(134, 181, 173, 0.8) !important; /* Same as price tag but slightly transparent */
+  border-radius: 0 1rem 1rem 0 !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  font-family: 'Poppins', 'Raleway', sans-serif !important;
+  font-weight: 500 !important;
+  font-size: 0.7rem !important; /* Smaller font size */
+  color: white !important;
+  opacity: 0 !important; /* Initially hidden like the price tag */
+  transition: opacity 0.8s ease-in-out !important;
+  z-index: 9 !important; /* Just below the price tag */
+  transform: scale(0.67) !important; /* Same as price tag */
+  transform-origin: left center !important;
+  pointer-events: none !important;
+  letter-spacing: 0.5px !important; /* Slightly spaced letters for better legibility */
+}
+
+/* Show GST tag on hover */
+html body .image-wrapper:hover .gst-tag {
+  opacity: 1 !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1400px) {
+  html body .image-wrapper .gst-tag {
+    transform: scale(0.71) !important;
+    top: 80px !important;
+  }
+}
+
+@media (max-width: 1000px) {
+  html body .image-wrapper .gst-tag {
+    transform: scale(0.77) !important;
+    top: 80px !important;
+  }
+}
+
+@media (max-width: 575px) {
+  html body .image-wrapper .gst-tag {
+    transform: scale(0.91) !important;
+    top: 80px !important;
+  }
+}
