@@ -1136,7 +1136,6 @@ h2.u-text-4::after {
   }
 }
 
-
 /* GST tag styling */
 html body .image-wrapper .gst-tag {
   position: absolute !important;
@@ -1190,3 +1189,4 @@ html body .image-wrapper:hover .gst-tag {
     top: 80px !important;
   }
 }
+
