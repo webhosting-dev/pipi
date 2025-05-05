@@ -271,7 +271,7 @@ html body .page-title {
 /* GST tag styling */
 html body .image-wrapper .gst-tag {
   position: absolute !important;
-  top: 78px !important; /* Position it below the price tag */
+  top: 75px !important; /* Position it below the price tag */
   left: 0 !important;
   width: auto !important;
   min-width: 44px !important;
