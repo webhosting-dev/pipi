@@ -173,6 +173,48 @@ html body .page-title {
   text-align: center !important;
 }
 
+/* Body font styling */
+.u-body {
+  color: #111111;
+  background-color: #ffffff;
+  font-family: 'Poppins', 'Raleway', 'Open Sans', sans-serif;
+}
+
+/* Base paragraph styling - Added from store.css */
+p.u-content-1.u-text {
+  font-family: 'Poppins', 'Raleway', sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-weight: normal;
+  text-align: justify !important;
+}
+
+/* Content alignment classes - Added from store.css */
+.u-content {
+  align-content: center;
+  text-align: center;
+}
+
+.u-content-1 {
+  align-content: left;
+  text-align: left;
+  margin: 0 0 0 0;
+}
+
+/* Keep paragraphs justified - Added from store.css */
+.u-content-1.u-text p {
+  text-align: justify !important;
+}
+
+/* Text styling - Added from store.css */
+.u-text {
+  word-wrap: break-word;
+  position: relative;
+  margin: 0 0 0 0;
+}
+
 /* Responsive adjustments with high specificity */
 @media (max-width: 1400px) {
   html body .course-grid {
@@ -234,6 +276,11 @@ html body .page-title {
   html body .page-title {
     font-size: 2.2rem !important;
   }
+  
+  /* Responsive paragraph styling */
+  p.u-content-1.u-text {
+    font-size: 1rem;
+  }
 }
 
 @media (max-width: 575px) {
@@ -265,6 +312,11 @@ html body .page-title {
   
   html body .page-title {
     font-size: 1.8rem !important;
+  }
+  
+  /* Responsive paragraph styling */
+  p.u-content-1.u-text {
+    font-size: 0.95rem;
   }
 }
 
