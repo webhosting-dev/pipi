@@ -215,6 +215,16 @@ p.u-content-1.u-text {
   margin: 0 0 0 0;
 }
 
+/* Container styling for proper margins - From store.css */
+.u-content.u-sheet.u-sheet-1 {
+  max-width: 1140px;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
 /* Responsive adjustments with high specificity */
 @media (max-width: 1400px) {
   html body .course-grid {
@@ -280,6 +290,14 @@ p.u-content-1.u-text {
   /* Responsive paragraph styling */
   p.u-content-1.u-text {
     font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .u-content.u-sheet.u-sheet-1 {
+    width: 90%;
+    padding-left: 20px;
+    padding-right: 20px;
   }
 }
 
